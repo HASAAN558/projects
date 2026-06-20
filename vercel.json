@@ -1,5 +1,10 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist/client",
-  "framework": "react"
+  "version": 2,
+  "routes": [
+    {
+      "src": "/[^.]+",
+      "dest": "/",
+      "status": 200
+    }
+  ]
 }
