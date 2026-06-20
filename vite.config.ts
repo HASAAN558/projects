@@ -11,7 +11,7 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    base: process.env.VITE_BASE_PATH || "/radiant-showreel-web"
+   base: process.env.VITE_BASE_PATH || "/"
   },
   // Force Nitro to optimize specifically for Vercel's architecture
   nitro: {
