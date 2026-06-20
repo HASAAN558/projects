@@ -6,31 +6,15 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// export default defineConfig({
-//   tanstackStart: {
-//     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-//     // nitro/vite builds from this
-//     server: { entry: "server" },
-//   },
-// });
-
-
 export default defineConfig({
-<<<<<<< HEAD
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
     base: process.env.VITE_BASE_PATH || "/radiant-showreel-web"
-=======
-  // Force Nitro to optimize specifically for Netlify's architecture
-  nitro: {
-    preset: "netlify",
   },
-  resolve: {
-    alias: {
-      "@": "/src",
-    },
->>>>>>> d855ee17edd17c7ce8a114c044a4c4fca2940e4f
+  // Force Nitro to optimize specifically for Vercel's architecture
+  nitro: {
+    preset: "vercel",
   },
 });
