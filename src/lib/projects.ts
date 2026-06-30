@@ -131,6 +131,62 @@ export const projects: Project[] = [
     screenshot: "/odoo-erp.png",
   },
   {
+    slug: "telecom-enterprise-crm",
+    title: "Enterprise Telecom CRM & ROI Engine",
+    description:
+      "A heavily customized Odoo CRM pipeline engineered for telecommunications providers, featuring automated feasibility workflows, live ROI calculators, and integrated GPS tracking.",
+    category: "Odoo",
+    tags: ["Odoo", "Python", "PostgreSQL", "ERP Customization", "Business Logic"],
+    href: "#",
+    live: false,
+    gradient: "from-emerald-500/40 via-teal-500/30 to-cyan-500/30",
+    year: "2026",
+    role: "Lead ERP Engineer",
+    client: "Telecommunications Sector",
+    duration: "3 months",
+    stack: ["Odoo 16+", "Python", "XML", "PostgreSQL", "JavaScript"],
+    challenge:
+      "The client required a specialized sales pipeline to handle complex ISP deployments. Standard CRMs lacked the ability to calculate deployment ROI (Fiber vs. Wireless costs) in real-time or track hardware installation coordinates.",
+    solution:
+      "Developed a custom Odoo module that overrides the standard CRM flow. Introduced an automated 'Wireless Survey' stage, a dynamic Business Case ROI calculator that computes hardware and bandwidth margins, and a one-click GPS coordinate synchronization tool for deployment locations.",
+    outcome:
+      "Eliminated manual ROI spreadsheet calculations and streamlined the sales-to-deployment pipeline into a single unified dashboard.",
+    highlights: [
+      "Custom Business Case module with automated ROI month calculations",
+      "One-click Lat/Long address synchronization for Point of Contacts",
+      "Multi-stage opportunity pipeline (Feasibility, Solution Finalize, Progression)",
+    ],
+    screenshot: "/telecom-crm.png", // 👈 Make sure to save one of your screenshots with this name in your public folder!
+  },
+  {
+    slug: "netops-deployment-erp",
+    title: "NetOps Deployment & Inventory ERP",
+    description:
+      "A comprehensive Odoo Network Operations (NetOps) module built for ISPs to manage end-to-end Fiber and Wireless deployments, site inventory, and NOC testing workflows.",
+    category: "Odoo",
+    tags: ["Odoo", "Python", "ERP", "Network Operations", "Inventory Management"],
+    href: "#",
+    live: false,
+    gradient: "from-blue-500/40 via-indigo-500/30 to-purple-500/30",
+    year: "2026",
+    role: "Lead ERP Engineer",
+    client: "Telecommunications Sector",
+    duration: "4 months",
+    stack: ["Odoo 16+", "Python", "XML", "PostgreSQL"],
+    challenge:
+      "The client's network operations team struggled with fragmented tracking of physical deployments. They needed a centralized system to track Fiber and Wireless installations, manage on-site hardware inventory, and coordinate Testing & Activation with the Network Operations Center (NOC).",
+    solution:
+      "Engineered a custom NetOps Dashboard that categorizes deployments into Wireless, Fiber, Testing & Activation, and Third Party workflows. Created dynamic deployment forms that automatically track specific hardware line items (like ONUs, Fiber Cables, and POP hardware) against specific customer coordinates and delivery orders.",
+    outcome:
+      "Unified the field technicians and the NOC team under one dashboard, eliminating lost hardware and streamlining the final Testing & Activation approval pipeline.",
+    highlights: [
+      "Centralized NetOps kanban dashboard for real-time deployment tracking",
+      "Granular hardware and cost tracking linked to specific Fiber and Wireless sites",
+      "Integrated Testing & Activation pipelines with NOC survey and switch/port configuration records",
+    ],
+    screenshot: "/netops-dashboard.png", // 👈 Save one of your new screenshots with this name in your public folder!
+  },
+  {
     slug: "meal-hub",
     title: "Meal Hub",
     description:

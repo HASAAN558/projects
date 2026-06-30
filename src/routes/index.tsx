@@ -11,9 +11,9 @@ const StarField = lazy(() => import("@/components/StarField"));
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Hasaan Mehmood — Full-Stack & AI Automation Engineer" },
-      { name: "description", content: "Portfolio of Hasaan Mehmood, specialized in Full-Stack development, AI workflow automation, and custom ML solutions." },
-      { property: "og:title", content: "Hasaan Mehmood — Full-Stack & AI Automation Engineer" },
+      { title: "Quantix Nexus — Enterprise Infrastructure & AI Automation" },
+      { name: "description", content: "Quantix Nexus is a premium technical agency specializing in custom ERP deployments, high-performance web applications, and autonomous AI systems." },
+      { property: "og:title", content: "Quantix Nexus — Enterprise Infrastructure & AI Automation" },
       { property: "og:description", content: "Robust web systems, native applications, and intelligent workspace automation pipelines." },
     ],
   }),
@@ -100,100 +100,95 @@ function Portfolio() {
 
       <Nav />
 
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center px-6 md:px-12 pt-24">
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 max-w-3xl">
+      {/* AGENCY HERO SECTION */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 md:px-12 pt-32 pb-20 max-w-6xl mx-auto">
+        {/* Subtle 3D Background specifically for the centered hero */}
+        <div className="absolute inset-0 -z-10 opacity-40 pointer-events-none flex items-center justify-center">
+          <Suspense fallback={null}><Scene3D /></Suspense>
+        </div>
+
+        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 flex flex-col items-center w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-8 text-sm"
+            className="mb-8 inline-flex items-center rounded-full border border-border bg-card/50 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-sm"
           >
-            <span className="size-2 rounded-full bg-primary animate-glow-pulse" />
-            <span className="text-muted-foreground">Available for new opportunities</span>
+            <span className="flex size-2 rounded-full bg-primary mr-2 animate-glow-pulse" />
+            Accepting new enterprise clients
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.1 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]"
+            className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter text-foreground leading-[1.05]"
           >
-            Engineering <span className="text-gradient">automated</span>
-            <br />digital backbones.
+            We engineer <br className="hidden md:block" />
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              digital infrastructure.
+            </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.25 }}
-            className="mt-8 text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed"
+            className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed"
           >
-            I'm Hasaan — a software engineer combining robust full-stack languages like Python and C++ with Odoo ERP structures and custom AI agents.
+            Quantix Nexus is a premium technical agency specializing in custom ERP deployments, high-performance web applications, and autonomous AI systems.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.4 }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-12 flex flex-col sm:flex-row gap-4"
           >
-            <a href="#work" className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] transition-all">
-              View selected work <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <a href="#work" className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105">
+              View Our Work
             </a>
-            <a href="#contact" className="glass glow-border inline-flex items-center gap-2 rounded-full px-6 py-3 font-medium hover:bg-card transition-all">
-              Get in touch
+            <a href="#contact" className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-card/50 backdrop-blur-sm px-8 py-4 text-sm font-semibold text-foreground transition-colors hover:bg-card">
+              Partner With Us
             </a>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.7 }}
-            className="mt-16 flex items-center gap-8 text-sm text-muted-foreground"
+            className="mt-20 flex flex-wrap justify-center items-center gap-8 md:gap-16 text-sm text-muted-foreground"
           >
-            <Stat value="Python/C++" label="Core System" />
+            <Stat value="Python/C++" label="Core Systems" />
             <Stat value="Odoo/ERP" label="Architecture" />
             <Stat value="n8n/AI" label="Automation" />
           </motion.div>
         </motion.div>
-
-        {/* 3D scene on the right */}
-        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[55%] pointer-events-none">
-          <Suspense fallback={null}><Scene3D /></Suspense>
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent" />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-xs text-muted-foreground tracking-widest uppercase"
-        >
-          Scroll
-        </motion.div>
       </section>
 
       {/* SERVICES */}
-      <section className="relative px-6 md:px-12 py-32">
+      <section className="relative px-6 md:px-12 py-32 bg-card/10">
         <div className="max-w-7xl mx-auto">
-          <SectionHeader eyebrow="What I do" title={<>Streamlining infrastructure with <span className="text-gradient">intelligent</span> design.</>} />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-16">
+          <SectionHeader eyebrow="What we do" title={<>Streamlining infrastructure with <span className="text-gradient">intelligent</span> design.</>} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
             {services.map((s, i) => (
               <motion.div
                 key={s.title}
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="glass glow-border rounded-2xl p-6 group hover:-translate-y-1 transition-transform"
+                className="glass glow-border rounded-2xl p-8 group hover:-translate-y-1 transition-transform"
               >
-                <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
+                <div className="size-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                   <s.icon className="size-5 text-primary" />
                 </div>
-                <h3 className="font-semibold text-lg">{s.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                <h3 className="font-semibold text-lg tracking-tight">{s.title}</h3>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* WORK */}
+      {/* WORK / FEATURED DEPLOYMENTS */}
       <section id="work" className="relative px-6 md:px-12 py-32">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="Selected work"
-            title={<>Recent <span className="text-gradient">projects</span> & system architectures.</>}
+            eyebrow="Featured Deployments"
+            title={<>Enterprise systems built by <span className="text-gradient">Quantix Nexus</span>.</>}
             right={<p className="text-sm text-muted-foreground max-w-xs">An overview of live web systems, data prediction apps, machine vision classifiers, and autonomous agent workflows.</p>}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-16">
+          {/* Agency layout: larger gaps between project cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 mt-20">
             {projects.map((p, i) => (
               <ProjectCard key={p.title} project={p} index={i} />
             ))}
@@ -201,26 +196,49 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="relative px-6 md:px-12 py-32">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-5 gap-12 items-center">
+      {/* ABOUT THE AGENCY */}
+      <section id="about" className="relative px-6 md:px-12 py-32 bg-card/10">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-5 gap-16 items-center">
           <div className="md:col-span-2">
-            <div className="aspect-square rounded-3xl glass glow-border relative overflow-hidden animate-float">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-accent/20 to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center text-7xl font-bold text-gradient">HM</div>
+            {/* Dark, premium gradient background */}
+            <div className="aspect-square rounded-3xl relative overflow-hidden bg-gradient-to-br from-[#0f0c29] via-[#1e1345] to-[#08182b] border border-white/5 shadow-2xl group">
+              
+              {/* Subtle cyan background glow in the center */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(6,182,212,0.15)_0%,transparent_65%)]" />
+
+              <div className="absolute inset-0 flex items-center justify-center">
+                {/* Outer Dashed Tech Ring (Slow Spin) */}
+                <div className="absolute size-[85%] rounded-full border-[1.5px] border-dashed border-cyan-500/20 animate-[spin_60s_linear_infinite]" />
+                
+                {/* Inner Dashed Tech Ring (Reverse Slow Spin) */}
+                <div className="absolute size-[65%] rounded-full border border-dashed border-cyan-400/30 animate-[spin_40s_linear_infinite_reverse]" />
+                
+                {/* The Interlocking QN Logo */}
+                <div className="relative font-black tracking-tighter select-none z-10 flex items-center justify-center drop-shadow-[0_0_30px_rgba(0,195,255,0.3)] group-hover:scale-105 transition-transform duration-700">
+                  {/* The large 'Q' */}
+                  <span className="text-[100px] lg:text-[130px] leading-none bg-gradient-to-b from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+                    Q
+                  </span>
+                  {/* The interlocking 'N' */}
+                  <span className="absolute -bottom-2 -right-2 text-[55px] lg:text-[70px] leading-none bg-gradient-to-t from-purple-500 to-fuchsia-500 bg-clip-text text-transparent">
+                    N
+                  </span>
+                </div>
+                
+              </div>
             </div>
           </div>
           <div className="md:col-span-3">
-            <p className="text-sm uppercase tracking-widest text-primary mb-4">About me</p>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+            <p className="text-sm uppercase tracking-widest text-primary mb-4">About the agency</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.1]">
               Bridging corporate efficiency with <span className="text-gradient">autonomous systems.</span>
             </h2>
-            <p className="mt-6 text-muted-foreground leading-relaxed">
-              As a full-stack engineer and automation developer based in Lahore, I deploy clean solutions across complex environments. Whether writing custom logic filters in C++ or Python, managing database schemes, or tuning vision models, my goal is to build secure and highly performant architectures.
+            <p className="mt-8 text-lg text-muted-foreground leading-relaxed">
+              As an engineering firm based in Lahore, we deploy clean solutions across complex environments. Whether writing custom logic filters in C++ or Python, managing database schemes, or tuning vision models, our goal is to build secure and highly performant architectures for modern enterprises.
             </p>
-            <div className="mt-8 flex flex-wrap gap-2 text-xs">
-              {["Python", "C++", "Odoo", "ERP", "n8n", "PyTorch", "HTML/CSS", "PostgreSQL"].map((t) => (
-                <span key={t} className="px-3 py-1.5 rounded-full glass text-muted-foreground">{t}</span>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {["Python", "C++", "Odoo", "ERP", "n8n", "PyTorch", "React", "PostgreSQL"].map((t) => (
+                <span key={t} className="px-4 py-2 rounded-full glass border border-border/50 text-sm font-medium text-muted-foreground">{t}</span>
               ))}
             </div>
           </div>
@@ -231,27 +249,27 @@ function Portfolio() {
       <section id="skills" className="relative px-6 md:px-12 py-32">
         <div className="max-w-7xl mx-auto">
           <SectionHeader
-            eyebrow="Skills"
-            title={<>The <span className="text-gradient">toolkit</span> I reach for.</>}
-            right={<p className="text-sm text-muted-foreground max-w-xs">Languages, automated services, and resource architectures I rely on to execute programmatic builds.</p>}
+            eyebrow="Capabilities"
+            title={<>The <span className="text-gradient">infrastructure</span> we leverage.</>}
+            right={<p className="text-sm text-muted-foreground max-w-xs">Languages, automated services, and resource architectures we rely on to execute programmatic enterprise builds.</p>}
           />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
             {skillGroups.map((g, i) => (
               <motion.div
                 key={g.title}
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.08 }}
-                className="glass glow-border rounded-2xl p-6"
+                className="glass glow-border rounded-3xl p-8"
               >
-                <p className="text-xs uppercase tracking-widest text-primary">{g.title}</p>
-                <div className="mt-5 space-y-4">
+                <p className="text-xs font-bold uppercase tracking-widest text-primary">{g.title}</p>
+                <div className="mt-8 space-y-6">
                   {g.items.map((s) => (
                     <div key={s.name}>
-                      <div className="flex justify-between text-sm">
-                        <span className="font-medium">{s.name}</span>
+                      <div className="flex justify-between text-sm mb-3">
+                        <span className="font-semibold text-foreground">{s.name}</span>
                         <span className="text-muted-foreground font-mono text-xs">{s.level}%</span>
                       </div>
-                      <div className="mt-2 h-1.5 rounded-full bg-card overflow-hidden">
+                      <div className="h-2 rounded-full bg-card overflow-hidden border border-border/50">
                         <motion.div
                           initial={{ width: 0 }}
                           whileInView={{ width: `${s.level}%` }}
@@ -270,27 +288,27 @@ function Portfolio() {
       </section>
 
       {/* TIMELINE */}
-      <section id="timeline" className="relative px-6 md:px-12 py-32">
+      <section id="timeline" className="relative px-6 md:px-12 py-32 bg-card/10">
         <div className="max-w-5xl mx-auto">
           <SectionHeader
-            eyebrow="Timeline"
-            title={<>My technical and <span className="text-gradient">academic</span> history.</>}
+            eyebrow="Foundation"
+            title={<>Our technical and <span className="text-gradient">academic</span> history.</>}
           />
-          <ol className="relative mt-16 border-l border-border/60 ml-3 space-y-10">
+          <ol className="relative mt-20 border-l border-border/60 ml-3 space-y-12">
             {timeline.map((t, i) => (
               <motion.li
                 key={t.year + t.title}
                 initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.05 }}
-                className="pl-8 relative"
+                className="pl-10 relative"
               >
                 <span className="absolute -left-[7px] top-2 size-3 rounded-full bg-primary shadow-[0_0_20px_hsl(var(--primary))]" />
                 <div className="flex flex-wrap items-baseline gap-3">
-                  <span className="font-mono text-xs text-primary">{t.year}</span>
-                  <h3 className="text-xl font-semibold">{t.title}</h3>
-                  <span className="text-sm text-muted-foreground">· {t.place}</span>
+                  <span className="font-mono text-sm font-semibold text-primary">{t.year}</span>
+                  <h3 className="text-2xl font-bold tracking-tight text-foreground">{t.title}</h3>
+                  <span className="text-sm font-medium text-muted-foreground">· {t.place}</span>
                 </div>
-                <p className="mt-2 text-muted-foreground leading-relaxed">{t.desc}</p>
+                <p className="mt-3 text-muted-foreground leading-relaxed max-w-3xl">{t.desc}</p>
               </motion.li>
             ))}
           </ol>
@@ -299,33 +317,38 @@ function Portfolio() {
 
       {/* CONTACT */}
       <section id="contact" className="relative px-6 md:px-12 py-32">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div>
             <p className="text-sm uppercase tracking-widest text-primary mb-4">Let's connect</p>
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1]">
-              Ready to automate <span className="text-gradient">your workspace?</span>
+            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tighter leading-[1.05]">
+              Ready to automate <span className="text-gradient">your enterprise?</span>
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground max-w-md">
-              Drop a brief description of your technical challenges, backend bottlenecks, or layout goals.
+            <p className="mt-6 text-lg text-muted-foreground max-w-md leading-relaxed">
+              Drop a brief description of your technical challenges, backend bottlenecks, or ERP goals. We build systems that scale.
             </p>
-            <a href="mailto:hassayking5@gmail.com"
-              className="mt-8 inline-flex items-center gap-3 text-foreground hover:text-primary transition-colors">
-              <Mail className="size-4" /> hassayking5@gmail.com
+            <a href="mailto:scientisthasaan@gmail.com"
+              className="mt-10 inline-flex items-center gap-3 text-lg font-medium text-foreground hover:text-primary transition-colors">
+              <Mail className="size-5" /> scientisthasaan@gmail.com
             </a>
-            <div className="mt-8 flex gap-3">
+            <div className="mt-10 flex gap-4">
               <SocialLink icon={Github} href="#" />
               <SocialLink icon={Linkedin} href="#" />
-              <SocialLink icon={Mail} href="mailto:hassayking5@gmail.com" />
+              <SocialLink icon={Mail} href="mailto:scientisthasaan@gmail.com" />
             </div>
           </div>
           <ContactForm />
         </div>
       </section>
 
-      <footer className="relative px-6 md:px-12 py-10 border-t border-border/50">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2026 Hasaan Mehmood. Crafted with care.</p>
-          <p className="font-mono text-xs">Lahore, Pakistan</p>
+      <footer className="relative px-6 md:px-12 py-12 border-t border-border/50 bg-background">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          <span className="text-xl font-extrabold tracking-tighter text-foreground">
+            Quantix<span className="text-primary">Nexus</span>
+          </span>
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8 text-sm text-muted-foreground">
+            <p>© {new Date().getFullYear()} Quantix Nexus. All rights reserved.</p>
+            <p className="font-mono text-xs hidden md:block">Lahore, Pakistan</p>
+          </div>
         </div>
       </footer>
     </div>
@@ -337,29 +360,29 @@ function Nav() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 px-6 md:px-12 py-5">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="size-7 rounded-lg bg-gradient-to-br from-primary to-accent" />
-          Hasaan Mehmood
+        <a href="#" className="flex items-center gap-2 font-extrabold tracking-tighter text-lg">
+          <span className="size-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-primary-foreground text-xs">QN</span>
+          Quantix Nexus
         </a>
-        <nav className="hidden md:flex items-center gap-1 glass rounded-full px-2 py-1.5 text-sm">
-          {[["Work", "#work"], ["Skills", "#skills"], ["About", "#about"], ["Contact", "#contact"]].map(([label, href]) => (
+        <nav className="hidden md:flex items-center gap-2 glass rounded-full px-3 py-2 text-sm font-medium border border-border/50">
+          {[["Work", "#work"], ["Capabilities", "#skills"], ["Agency", "#about"], ["Contact", "#contact"]].map(([label, href]) => (
             <a key={label} href={href} className="px-4 py-1.5 rounded-full hover:bg-card transition-colors text-muted-foreground hover:text-foreground">{label}</a>
           ))}
         </nav>
-        <a href="#contact" className="hidden md:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground hover:shadow-[var(--shadow-glow)] transition-all">
-          Hire me <ArrowUpRight className="size-3.5" />
+        <a href="#contact" className="hidden md:inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-2.5 text-sm font-semibold text-background hover:scale-105 transition-all">
+          Partner With Us <ArrowUpRight className="size-3.5" />
         </a>
         <button onClick={() => setOpen(!open)} className="md:hidden glass rounded-full p-2.5">
-          <div className="size-4 flex flex-col justify-center gap-1">
+          <div className="size-4 flex flex-col justify-center gap-1.5">
             <span className="h-0.5 bg-foreground rounded" />
             <span className="h-0.5 bg-foreground rounded w-3/4" />
           </div>
         </button>
       </div>
       {open && (
-        <div className="md:hidden mt-3 glass rounded-2xl p-4 flex flex-col gap-2 text-sm">
-          {[["Work", "#work"], ["Skills", "#skills"], ["About", "#about"], ["Contact", "#contact"]].map(([label, href]) => (
-            <a key={label} href={href} onClick={() => setOpen(false)} className="px-3 py-2 rounded-lg hover:bg-card">{label}</a>
+        <div className="md:hidden mt-3 glass rounded-2xl p-4 flex flex-col gap-2 text-sm border border-border/50 shadow-xl shadow-black/20">
+          {[["Work", "#work"], ["Capabilities", "#skills"], ["Agency", "#about"], ["Contact", "#contact"]].map(([label, href]) => (
+            <a key={label} href={href} onClick={() => setOpen(false)} className="px-4 py-3 rounded-xl font-medium hover:bg-card">{label}</a>
           ))}
         </div>
       )}
@@ -369,10 +392,10 @@ function Nav() {
 
 function SectionHeader({ eyebrow, title, right }: { eyebrow: string; title: React.ReactNode; right?: React.ReactNode }) {
   return (
-    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+    <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-b border-border/50 pb-8">
       <div>
-        <p className="text-sm uppercase tracking-widest text-primary mb-4">{eyebrow}</p>
-        <h2 className="text-4xl md:text-6xl font-bold tracking-tight leading-[1.05] max-w-2xl">{title}</h2>
+        <p className="text-sm font-bold uppercase tracking-widest text-primary mb-4">{eyebrow}</p>
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.1] max-w-2xl">{title}</h2>
       </div>
       {right}
     </div>
@@ -381,9 +404,9 @@ function SectionHeader({ eyebrow, title, right }: { eyebrow: string; title: Reac
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div>
-      <div className="text-2xl font-bold text-foreground">{value}</div>
-      <div className="text-xs uppercase tracking-wider mt-1">{label}</div>
+    <div className="text-center md:text-left">
+      <div className="text-3xl font-extrabold text-foreground tracking-tight">{value}</div>
+      <div className="text-xs font-semibold uppercase tracking-widest mt-2 text-muted-foreground">{label}</div>
     </div>
   );
 }
@@ -399,70 +422,67 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       <Link
         to="/projects/$slug"
         params={{ slug: project.slug }}
-        className="group relative block glass glow-border rounded-3xl p-6 md:p-8 overflow-hidden hover:-translate-y-1 transition-transform"
+        className="group relative flex flex-col rounded-3xl border border-border/50 bg-card/20 p-5 transition-all hover:bg-card/50 hover:border-border overflow-hidden"
       >
-      <div className={`absolute -top-24 -right-24 size-64 rounded-full bg-gradient-to-br ${project.gradient} blur-3xl opacity-60 group-hover:opacity-100 transition-opacity`} />
+        <div className={`absolute -top-32 -right-32 size-72 rounded-full bg-gradient-to-br ${project.gradient} blur-[100px] opacity-30 group-hover:opacity-60 transition-opacity duration-700`} />
 
-      <div className="relative">
-        <div className="flex items-start justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
-            {project.live && (
-              <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-primary/15 text-primary border border-primary/30">
-                <span className="size-1.5 rounded-full bg-primary animate-glow-pulse" /> Live
-              </span>
-            )}
-            <span className="font-mono text-xs text-muted-foreground">{project.year}</span>
-          </div>
-          <ArrowUpRight className="size-5 text-muted-foreground group-hover:text-primary transition-colors" />
-        </div>
-
-        <div className="mt-6 aspect-[16/10] rounded-2xl bg-card/60 border border-border overflow-hidden relative">
-          <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`} />
+        {/* Image Container */}
+        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-zinc-950 border border-border/50 shadow-inner">
+          <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-20`} />
+          
+          {/* Note: If you updated to screenshots array in projects.ts, use project.screenshots[0] here */}
+          {/* Using project.screenshot below to match your provided interface structure */}
           {project.screenshot ? (
             <img
               src={project.screenshot}
               alt={`${project.title} preview`}
               loading="lazy"
-              className="absolute inset-0 size-full object-cover object-top opacity-90 group-hover:scale-[1.03] transition-transform duration-700"
+              className="absolute inset-0 size-full object-cover object-top opacity-80 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-700"
             />
           ) : (
             <>
               <div className="absolute inset-0 backdrop-blur-2xl bg-background/30" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-5xl md:text-6xl font-bold text-gradient opacity-90 group-hover:scale-110 transition-transform duration-700">
+                <div className="text-6xl font-bold text-gradient opacity-90 group-hover:scale-110 transition-transform duration-700 tracking-tighter">
                   {project.title.split(" ").map((w) => w[0]).join("").slice(0, 2)}
                 </div>
               </div>
             </>
           )}
-          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background/80 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background/90 to-transparent" />
         </div>
 
-        <div className="mt-6">
-          <div className="flex items-center justify-between gap-4">
-            <h3 className="text-2xl font-semibold tracking-tight">{project.title}</h3>
-            {project.live && (
-              <a
-                href={project.href}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                aria-label="Open live site"
-                className="shrink-0 inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-primary transition-colors"
-              >
-                Live <ExternalLink className="size-3.5" />
-              </a>
-            )}
+        {/* Text Content */}
+        <div className="flex flex-col flex-grow pt-8 px-2 pb-2 z-10">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs font-bold font-mono text-primary tracking-widest uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+              {project.category || "Case Study"}
+            </span>
+            <div className="flex items-center gap-3">
+              {project.live && (
+                <span className="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" /> Live
+                </span>
+              )}
+              <span className="text-xs font-medium text-muted-foreground">{project.year}</span>
+            </div>
           </div>
-          <p className="mt-2 text-sm text-muted-foreground leading-relaxed line-clamp-2">{project.description}</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            {project.tags.map((t) => (
-              <span key={t} className="text-xs font-mono px-2.5 py-1 rounded-full border border-border text-muted-foreground">{t}</span>
+          
+          <h3 className="text-3xl font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+            {project.title}
+          </h3>
+          <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-3">
+            {project.description}
+          </p>
+          
+          <div className="mt-6 flex flex-wrap gap-2">
+            {project.tags.slice(0, 4).map((t) => (
+              <span key={t} className="text-xs font-medium px-3 py-1.5 rounded-full border border-border/50 bg-background text-muted-foreground">
+                {t}
+              </span>
             ))}
           </div>
         </div>
-      </div>
       </Link>
     </motion.div>
   );
@@ -470,8 +490,8 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 function SocialLink({ icon: Icon, href }: { icon: typeof Github; href: string }) {
   return (
-    <a href={href} className="glass glow-border size-12 rounded-full flex items-center justify-center hover:bg-card transition-all hover:-translate-y-0.5">
-      <Icon className="size-5" />
+    <a href={href} className="glass border border-border/50 size-14 rounded-full flex items-center justify-center hover:bg-card hover:border-border transition-all hover:-translate-y-1">
+      <Icon className="size-5 text-foreground" />
     </a>
   );
 }
@@ -497,7 +517,7 @@ function ContactForm() {
     setSubmitting(false);
     setDone(true);
     form.reset();
-    toast.success("Message sent — I'll reply within 48 hours.");
+    toast.success("Message sent — We'll reply within 24 hours.");
   }
 
   return (
@@ -507,38 +527,38 @@ function ContactForm() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.7 }}
-      className="glass glow-border rounded-3xl p-6 md:p-8 space-y-5"
+      className="glass rounded-3xl p-8 md:p-10 space-y-6 border border-border/50 shadow-2xl shadow-black/20"
     >
       <div>
-        <label htmlFor="name" className="text-xs uppercase tracking-widest text-muted-foreground">Name</label>
+        <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Name / Company</label>
         <input
           id="name" name="name" type="text" required maxLength={100}
-          placeholder="Your full name"
-          className="mt-2 w-full bg-card/50 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+          placeholder="Acme Corp"
+          className="mt-3 w-full bg-background border border-border/50 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all shadow-inner"
         />
       </div>
       <div>
-        <label htmlFor="email" className="text-xs uppercase tracking-widest text-muted-foreground">Email</label>
+        <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Work Email</label>
         <input
           id="email" name="email" type="email" required maxLength={255}
           placeholder="you@company.com"
-          className="mt-2 w-full bg-card/50 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition"
+          className="mt-3 w-full bg-background border border-border/50 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all shadow-inner"
         />
       </div>
       <div>
-        <label htmlFor="message" className="text-xs uppercase tracking-widest text-muted-foreground">Project brief</label>
+        <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Project Brief</label>
         <textarea
           id="message" name="message" required maxLength={1000} rows={5}
-          placeholder="Tell me a bit about the project, timeline and goals."
-          className="mt-2 w-full bg-card/50 border border-border rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 transition resize-none"
+          placeholder="Tell us about your infrastructure goals, timelines, and technical requirements."
+          className="mt-3 w-full bg-background border border-border/50 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/50 transition-all resize-none shadow-inner"
         />
       </div>
       <button
         type="submit"
         disabled={submitting}
-        className="group w-full inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-primary-foreground font-medium hover:shadow-[var(--shadow-glow)] transition-all disabled:opacity-60"
+        className="group w-full inline-flex items-center justify-center gap-3 rounded-xl bg-foreground px-6 py-4 text-background font-bold hover:scale-[1.02] transition-all disabled:opacity-60 disabled:hover:scale-100"
       >
-        {done ? (<><Check className="size-4" /> Sent</>) : submitting ? "Sending…" : (<>Send message <Send className="size-4 transition-transform group-hover:translate-x-0.5" /></>)}
+        {done ? (<><Check className="size-5" /> Request Received</>) : submitting ? "Processing…" : (<>Submit Brief <Send className="size-4 transition-transform group-hover:translate-x-1" /></>)}
       </button>
     </motion.form>
   );
